@@ -1,104 +1,311 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>PAVL Development L.L.C.</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PAVL Development L.L.C. | General Contractor in Sachse, TX</title>
   <style>
+    :root {
+      --green: #2f351d;
+      --green-dark: #161a10;
+      --gold: #c49a3c;
+      --cream: #f5f1e8;
+      --white: #ffffff;
+      --text: #111;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      color: #111;
+      background: var(--green-dark);
+      color: var(--white);
     }
+
     header {
-      background: #111;
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
+      min-height: 100vh;
+      background:
+        linear-gradient(90deg, rgba(22,26,16,.95), rgba(47,53,29,.75), rgba(22,26,16,.25)),
+        url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=80");
+      background-size: cover;
+      background-position: center;
+      padding: 24px;
     }
-    header h1 {
-      margin: 0;
-      font-size: 36px;
-    }
-    header p {
-      color: #d4af37;
-      font-size: 18px;
-    }
-    section {
-      padding: 30px 20px;
-      max-width: 900px;
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
       margin: auto;
     }
-    .hero {
-      background: white;
-      text-align: center;
-      padding: 50px 20px;
+
+    .logo {
+      font-size: 32px;
+      font-weight: bold;
+      letter-spacing: 4px;
+      color: var(--cream);
     }
-    .button {
+
+    .logo span { color: var(--gold); }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      margin-left: 22px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .hero {
+      max-width: 720px;
+      margin: 120px auto 0;
+      padding: 20px;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      letter-spacing: 2px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(42px, 8vw, 86px);
+      line-height: .95;
+      margin: 20px 0;
+      text-transform: uppercase;
+    }
+
+    h1 span { color: var(--gold); }
+
+    .hero p {
+      font-size: 18px;
+      line-height: 1.6;
+      max-width: 560px;
+    }
+
+    .btn {
       display: inline-block;
-      background: #d4af37;
+      margin: 12px 10px 0 0;
+      padding: 15px 24px;
+      background: var(--gold);
       color: #111;
-      padding: 14px 22px;
-      margin: 8px;
       text-decoration: none;
       font-weight: bold;
-      border-radius: 6px;
+      border-radius: 3px;
     }
+
+    .btn.outline {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid var(--gold);
+    }
+
+    section {
+      padding: 70px 24px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--cream);
+      font-size: 32px;
+    }
+
+    h2:after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: var(--gold);
+      margin-top: 12px;
+    }
+
     .services {
       display: grid;
-      gap: 15px;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 18px;
+      margin-top: 35px;
     }
+
     .card {
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      border-left: 5px solid #d4af37;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(196,154,60,.35);
+      padding: 28px;
+      min-height: 190px;
     }
+
+    .card h3 {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .card p {
+      color: #ddd;
+      line-height: 1.5;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .split img, .gallery img {
+      width: 100%;
+      border-radius: 4px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      margin-top: 35px;
+    }
+
+    .contact {
+      background: var(--cream);
+      color: var(--text);
+      max-width: none;
+    }
+
+    .contact-inner {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .contact h2 {
+      color: var(--green-dark);
+    }
+
+    .contact a {
+      color: var(--green-dark);
+      font-weight: bold;
+    }
+
     footer {
-      background: #111;
-      color: white;
       text-align: center;
-      padding: 25px;
+      padding: 40px 20px;
+      background: #090b07;
+      color: var(--cream);
+    }
+
+    @media (max-width: 700px) {
+      nav {
+        display: block;
+        text-align: center;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 12px 8px 0;
+      }
+
+      .hero {
+        margin-top: 80px;
+        text-align: center;
+      }
+
+      .split {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
+
 <body>
 
 <header>
-  <h1>PAVL Development L.L.C.</h1>
-  <p>General Contracting • Construction • Property Improvement</p>
+  <nav>
+    <div class="logo">P<span>A</span>VL</div>
+    <div>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="eyebrow">General Contracting • Construction • Property Improvement</div>
+    <h1>Building Better Spaces <span>From the Ground Up</span></h1>
+    <p>
+      PAVL Development L.L.C. is a general contracting company serving Sachse, TX and surrounding communities.
+      Built on integrity. Focused on family. Committed to excellence.
+    </p>
+    <a class="btn" href="tel:2147180071">Call 214-718-0071</a>
+    <a class="btn outline" href="mailto:Phillip.m.villa@gmail.com">Request a Free Estimate</a>
+  </div>
 </header>
 
-<section class="hero">
-  <h2>Building Better Spaces from the Ground Up</h2>
-  <p>PAVL Development L.L.C. is a general contracting company serving Sachse, TX and surrounding communities. We focus on quality construction, renovations, repairs, and property improvement.</p>
-  <a class="button" href="tel:2147180071">Call 214-718-0071</a>
-  <a class="button" href="mailto:Phillip.m.villa@gmail.com">Request a Free Estimate</a>
-</section>
-
-<section>
+<section id="services">
   <h2>Our Services</h2>
   <div class="services">
-    <div class="card">Home Renovations</div>
-    <div class="card">Kitchen & Bathroom Remodels</div>
-    <div class="card">Flooring, Painting & Drywall</div>
-    <div class="card">Framing, Repairs & Property Improvements</div>
-    <div class="card">Residential and Light Commercial Projects</div>
+    <div class="card">
+      <h3>General Contracting</h3>
+      <p>Full-service project coordination for residential and light commercial work.</p>
+    </div>
+    <div class="card">
+      <h3>Renovations</h3>
+      <p>Kitchen, bathroom, flooring, painting, drywall, framing, and property improvements.</p>
+    </div>
+    <div class="card">
+      <h3>Commercial Construction</h3>
+      <p>Professional construction support for small business and commercial spaces.</p>
+    </div>
+    <div class="card">
+      <h3>Real Estate Development</h3>
+      <p>Building toward future development projects, investment properties, and community growth.</p>
+    </div>
   </div>
 </section>
 
-<section>
-  <h2>About PAVL Development</h2>
-  <p>We are building a company focused on dependable craftsmanship, honest communication, and long-term value. As PAVL Development grows, our vision is to expand from general contracting into real estate development.</p>
+<section id="about">
+  <div class="split">
+    <div>
+      <h2>About PAVL Development</h2>
+      <p>
+        PAVL Development L.L.C. is built around dependable craftsmanship, clear communication,
+        and long-term value. We currently serve clients through general contracting and property
+        improvement services, with a long-term vision of growing into real estate development.
+      </p>
+      <p>
+        Our mission is simple: build with integrity, serve families well, and create spaces that last.
+      </p>
+      <a class="btn" href="#contact">Work With Us</a>
+    </div>
+    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80" alt="Construction framing project">
+  </div>
 </section>
 
-<section>
-  <h2>Contact</h2>
-  <p><strong>Service Area:</strong> Sachse, TX and surrounding areas</p>
-  <p><strong>Phone:</strong> <a href="tel:2147180071">214-718-0071</a></p>
-  <p><strong>Email:</strong> <a href="mailto:Phillip.m.villa@gmail.com">Phillip.m.villa@gmail.com</a></p>
+<section id="projects">
+  <h2>Featured Projects</h2>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=80" alt="Luxury home exterior">
+    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=80" alt="Kitchen remodel">
+    <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=900&q=80" alt="Modern home">
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="contact-inner">
+    <h2>Contact</h2>
+    <p><strong>Service Area:</strong> Sachse, TX and surrounding areas</p>
+    <p><strong>Phone:</strong> <a href="tel:2147180071">214-718-0071</a></p>
+    <p><strong>Email:</strong> <a href="mailto:Phillip.m.villa@gmail.com">Phillip.m.villa@gmail.com</a></p>
+    <a class="btn" href="mailto:Phillip.m.villa@gmail.com">Request a Free Estimate</a>
+  </div>
 </section>
 
 <footer>
+  <div class="logo">P<span>A</span>VL</div>
+  <p>Built on Integrity. Focused on Family. Committed to Excellence.</p>
   <p>© 2026 PAVL Development L.L.C. All rights reserved.</p>
 </footer>
 
