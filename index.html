@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PAVL Development L.L.C. | General Contractor in Sachse, TX</title>
+
   <style>
     :root {
       --green: #2f351d;
@@ -21,6 +22,16 @@
       font-family: Arial, sans-serif;
       background: var(--green-dark);
       color: var(--white);
+    }
+
+    .logo-img {
+      width: 190px;
+      height: auto;
+      display: block;
+    }
+
+    .footer-logo {
+      margin: 0 auto 20px;
     }
 
     header {
@@ -41,19 +52,15 @@
       margin: auto;
     }
 
-    .logo {
-      font-size: 32px;
-      font-weight: bold;
-      letter-spacing: 4px;
-      color: var(--cream);
+    nav div {
+      display: flex;
+      align-items: center;
+      gap: 22px;
     }
-
-    .logo span { color: var(--gold); }
 
     nav a {
       color: var(--white);
       text-decoration: none;
-      margin-left: 22px;
       font-weight: bold;
       font-size: 14px;
     }
@@ -202,9 +209,15 @@
         text-align: center;
       }
 
-      nav a {
-        display: inline-block;
-        margin: 12px 8px 0;
+      nav div {
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 16px;
+      }
+
+      .logo-img {
+        width: 220px;
+        margin: 0 auto;
       }
 
       .hero {
@@ -223,7 +236,8 @@
 
 <header>
   <nav>
-    <<img class="logo-img" src="logo.png" alt="PAVL Development LLC Logo">
+    <img class="logo-img" src="logo.png" alt="PAVL Development LLC Logo">
+    <div>
       <a href="#services">Services</a>
       <a href="#projects">Projects</a>
       <a href="#about">About</a>
